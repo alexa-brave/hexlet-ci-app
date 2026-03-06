@@ -1,0 +1,36 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4           # 1. Код
+      - uses: actions/setup-node@v4         # 2. Node.js
+        with:
+          node-version: '18'
+      - run: make setup                      # 3. Зависимости
+      - run: make start
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: make setup
+      - name: Run tests
+        run: make test
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: make setup
+      - name: Run linter
+        run: make lint
