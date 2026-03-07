@@ -1,3 +1,5 @@
+[![CI](https://github.com/alexa-brave/hexlet-ci-app/actions/workflows/workflow1.yml/badge.svg)](https://github.com/alexa-brave/hexlet-ci-app/actions/workflows/workflow1.yml)
+
 # Example app for CI Hexlet course
 
 Starting boilerplate of [Strapi](https://strapi.io/) application
