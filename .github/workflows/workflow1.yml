@@ -12,6 +12,7 @@ jobs:
           node-version: '18'
       - run: make setup                      # 3. Зависимости
       - run: make start
+      - uses: hexlet-components/hello-from-hexlet-action@release
 
   tests:
     runs-on: ubuntu-latest
